@@ -6,4 +6,16 @@ class Paperboy
     @earnings = 0
   end
 
+  def name
+    @name
+  end
+
+  def experience
+    @experience
+  end
+
+  def earnings
+    @earnings
+  end
+
 end
