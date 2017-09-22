@@ -28,6 +28,8 @@ class Paperboy
     if papers > quota
       @earnings += quota * 0.25
       @earnings += (papers - quota) * 0.5
+    elsif papers < quota
+      @earnings += papers * 0.25 - 2
     else
       @earnings += papers * 0.25
     end
@@ -41,5 +43,8 @@ cece = Paperboy.new("Cece")
 
 puts "#{cece.name}'s experience: #{cece.experience}, earnings: #{cece.earnings}, quota: #{cece.quota}"
 
-cece.deliver(100, 150)
+cece.deliver(100, 130)
+puts "#{cece.name}'s experience: #{cece.experience}, earnings: #{cece.earnings}, quota: #{cece.quota}"
+
+cece.deliver(100, 160)
 puts "#{cece.name}'s experience: #{cece.experience}, earnings: #{cece.earnings}, quota: #{cece.quota}"
