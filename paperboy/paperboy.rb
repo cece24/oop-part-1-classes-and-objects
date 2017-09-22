@@ -23,7 +23,8 @@ class Paperboy
   end
 
   def deliver(start_address, end_address)
-    papers = (end_address - start_address).abs
+    papers = (end_address - start_address + 1).abs
+    # added +1 to offset counting house numbers inclusively
 
     if papers > quota
       @earnings += quota * 0.25
@@ -35,6 +36,7 @@ class Paperboy
     end
 
     @experience += papers
+    @earnings
   end
 
   def report
@@ -51,3 +53,15 @@ cece.deliver(100, 150)
 puts cece.report
 cece.deliver(100, 150)
 puts cece.report
+
+tommy = Paperboy.new("Tommy")
+
+puts tommy.quota # => 50
+puts tommy.deliver(101, 160) # => 17.5
+puts tommy.earnings #=> 17.5
+puts tommy.report # => "I'm Tommy, I've delivered 60 papers and I've earned $17.5 so far!"
+
+puts tommy.quota # => 80
+puts tommy.deliver(1, 75) # => 16.75
+puts tommy.earnings #=> 34.25
+puts tommy.report # => "I'm Tommy, I've been delivered 135 papers and I've earned $34.25 so far!"
