@@ -36,6 +36,10 @@ class Paperboy
 
     @experience += papers
   end
+
+  def report
+    "I'm #{ name }, I've delivered #{ experience } papers and I've earned #{ earnings } so far!"
+  end
 end
 
 
@@ -43,8 +47,7 @@ cece = Paperboy.new("Cece")
 
 puts "#{cece.name}'s experience: #{cece.experience}, earnings: #{cece.earnings}, quota: #{cece.quota}"
 
-cece.deliver(100, 130)
-puts "#{cece.name}'s experience: #{cece.experience}, earnings: #{cece.earnings}, quota: #{cece.quota}"
-
-cece.deliver(100, 160)
-puts "#{cece.name}'s experience: #{cece.experience}, earnings: #{cece.earnings}, quota: #{cece.quota}"
+cece.deliver(100, 150)
+puts cece.report
+cece.deliver(100, 150)
+puts cece.report
