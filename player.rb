@@ -62,18 +62,10 @@ puts "Collected treasure, number of gold coins: #{player_1.gold_coins} and has #
 player_1.do_battle(11)
 puts "Player does battle, now has #{player_1.health_points} health points and #{player_1.lives} lives"
 
-player_1.do_battle(11)
-puts "Player does battle, now has #{player_1.health_points} health points and #{player_1.lives} lives"
-player_1.do_battle(11)
-puts "Player does battle, now has #{player_1.health_points} health points and #{player_1.lives} lives"
-player_1.do_battle(11)
-puts "Player does battle, now has #{player_1.health_points} health points and #{player_1.lives} lives"
-player_1.do_battle(11)
-puts "Player does battle, now has #{player_1.health_points} health points and #{player_1.lives} lives"
-player_1.do_battle(11)
-puts "Player does battle, now has #{player_1.health_points} health points and #{player_1.lives} lives"
-player_1.do_battle(11)
-puts "Player does battle, now has #{player_1.health_points} health points and #{player_1.lives} lives"
+12.times do
+  player_1.do_battle(11)
+  puts "Player does battle, now has #{player_1.health_points} health points and #{player_1.lives} lives"
+end
 
 puts player_1.restart
 puts "Player does battle, now has #{player_1.health_points} health points and #{player_1.lives} lives"
